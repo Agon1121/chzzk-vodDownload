@@ -1,9 +1,12 @@
 const request = require("request");
 const DOMParser = require("xmldom").DOMParser;
 
+var vodLinkValue = "https://chzzk.naver.com/video/3000"
+var serialNum = vodLinkValue.replace("https://chzzk.naver.com/video/","");
+console.log(serialNum);
 const options = {
   method: "GET",
-  url: "https://api.chzzk.naver.com/service/v1/videos/1980",
+  url: `https://api.chzzk.naver.com/service/v1/videos/${serialNum}`,
 };
 
 request(options, function (error, response, body) {
@@ -25,3 +28,4 @@ request(options, function (error, response, body) {
     });
   });
 });
+
