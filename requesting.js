@@ -1,7 +1,7 @@
 const request = require("request");
 const DOMParser = require("xmldom").DOMParser;
 
-var vodLinkValue = "https://chzzk.naver.com/video/3000"
+var vodLinkValue = ""
 var serialNum = vodLinkValue.replace("https://chzzk.naver.com/video/","");
 console.log(serialNum);
 const options = {
