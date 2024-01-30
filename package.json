@@ -11,7 +11,7 @@
   "version": "1.0.0",
   "main": "requesting.js",
   "scripts": {
-    "test": "node requesting.js"
+    "p": "node requesting.js"
   },
   "keywords": [],
   "author": "",

@@ -1,18 +1,18 @@
 const request = require("request");
 const DOMParser = require("xmldom").DOMParser;
 
-var vodLinkValue = ""
+var vodLinkValue = "https://chzzk.naver.com/video/60644"
 var serialNum = vodLinkValue.replace("https://chzzk.naver.com/video/","");
 console.log(serialNum);
 const options = {
   method: "GET",
-  url: `https://api.chzzk.naver.com/service/v1/videos/${serialNum}`,
+  url: `https://api.chzzk.naver.com/service/v2/videos/${serialNum}`,
 };
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
   const data = JSON.parse(body);
-  const xmlLink = `https://apis.naver.com/neonplayer/vodplay/v1/playback/${data.content.videoId}?key=${data.content.inKey}&env=real`;
+  const xmlLink = `https://apis.naver.com/neonplayer/vodplay/v2/playback/${data.content.videoId}?key=${data.content.inKey}&env=real`;
 
   request(xmlLink, function (error, response, body) {
     if (error) throw new Error(error);
